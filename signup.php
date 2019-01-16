@@ -37,6 +37,10 @@ include 'scripts.php';
 					    <span class="focus-input100"></span>
                     </div>
                     <div class="form-group">
+					    <input class="form-control" type="password" name="cpassword" placeholder="Confirm Password" required>
+					    <span class="focus-input100"></span>
+                    </div>
+                    <div class="form-group">
                         <input class="form-control" type="text" name="userid" placeholder="ID / Passport" required>
 					    <span class="focus-input100"></span>
                     </div>
