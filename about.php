@@ -70,7 +70,7 @@ include 'css.php';
 
                 <hr>
 
-                <p>Fraex's a brazilian store for the exchange of crypto coins will have the ease, speed and security differentiated in the acquisition of assets by customers, thus consolidating in the financial market as a new method of digital currency exchange. The ease of the user provides the transparency of the entire purchase process from requesting the minimum data required for operations along with the speed of checkout on the concept of just a few clicks along with verification security. It will support without geographic restrictions, accepting purchases with fiduciary currencies (FIAT), American Dollar (USD), Euro (EUR) and Brazilian Real (BRL), as well as other traditional crypto-coins such as Bitcoin, Litecoin, Ethereum and Cardano.</p>
+                <p>Fraex's a brazilian store for the exchange of crypto coins will have the ease, speed and security differentiated in the acquisition of assets by customers, thus consolidating in the financial market as a new method of digital currency exchange. The ease of the user provides the transparency of the entire purchase process from requesting the minimum data required for operations along with the speed of checkout on the concept of just a few clicks along with verification security. It will support without geographic restrictions, accepting purchases with fiduciary currencies (FIAT) like American Dollar (USD), as well as other traditional crypto-coins such as Bitcoin, Litecoin, Ethereum and Cardano.</p>
 
                 </div>
 
@@ -92,7 +92,7 @@ include 'css.php';
 
             <hr>
 
-            <p>Social networks: <a href="https://www.linkedin.com/in/alexandre-frade" target="_blank"><i class="fab fa-linkedin"></i></a></p>
+            <p>Social networks: <a href="https://www.linkedin.com/in/alexandre-frade" target="_blank"><i class="fab fa-linkedin"></i></a><a href="https://github.com/xanmod"><i class="fab fa-github"></i></a></p>
 
           </div><!-- /.col-lg-4 -->
 
@@ -116,11 +116,11 @@ include 'css.php';
 
             <h2>Sebastian Sánchez</h2>
 
-            <p>Student of analysis and systems development. Web development lover and a hobby FPS player. Costa Rica citizen. 20 years and almost 3 years old living in Brazil. Fraex co-founder.</p>
+            <p>Student of analysis and systems development. Web development lover and a hobby FPS player. Costa Rica citizen. 20 years and 3 years old living in Brazil. Fraex co-founder.</p>
 
             <hr>
 
-            <p>Social networks: <a href="https://www.linkedin.com/in/sebastian-s%C3%A1nchez-vega-011a52160/?locale=pt_BR" target="_blank"><i class="fab fa-linkedin"></i></a></p>
+            <p>Social networks: <a href="https://www.linkedin.com/in/sebastian-s%C3%A1nchez-vega-011a52160/?locale=pt_BR" target="_blank"><i class="fab fa-linkedin"></i></a><a href="https://github.com/sebaskun98"><i class="fab fa-github"></i></a></p>
 
           </div><!-- /.col-lg-4 -->
 
