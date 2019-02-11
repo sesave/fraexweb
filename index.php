@@ -12,8 +12,6 @@ include 'banco-moedas.php';
 
 include 'conexao.php';
 
-$moedas = listaMoedas($conexao);
-
 $coins = listaCoins($conexao);
 
 include 'css.php';
@@ -55,17 +53,13 @@ $paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
 
                 		<p class="s2-txt3 p-t-18">
 
-		        			Select a currency:
+		        			Select a currency (available soon):
 
 				        </p>
 
-						<select class="form-control" name="base" onchange="this.form.submit();">
+						<select class="form-control" name="base">
 
-                    	<?php foreach($moedas as $moeda) : ?>
-
-                        <option value="<?=$moeda['currency_st_apisymbol']?>"><?=$moeda['nome']?></option>
-
-                    	<?php endforeach ?>
+                        <option value="USD" selected="USD">US Dollar</option>
 
                 		</select>
 
