@@ -80,11 +80,7 @@ include 'css.php';
 
                 <li>US Dollar</li>
 
-                <li>Brazilian Real</li>
-
-                <li>Euro</li>
-
-                <li>Pound Sterling</li>
+                <li>Actually we're thinking to accept more currencies than dollar, because we're on a beta phase</li>
 
                 </ul></p>
 
