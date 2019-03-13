@@ -5,7 +5,7 @@ function startCalc(){
 function calc(){
   one = document.autoSumForm.firstBox.value;
   equal = one / getprice;
-  document.autoSumForm.secondBox.value = ((equal-equal*0.2) / getbase).toFixed(8);
+  document.autoSumForm.secondBox.value = ((equal-equal*0.05) / getbase).toFixed(8);
 }
 
 setInterval(function(){

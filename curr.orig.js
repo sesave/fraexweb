@@ -7,7 +7,7 @@ function calc(){
   one.split('$ ').join('');
 
   equal = one / getprice;
-  document.autoSumForm.secondBox.value = (equal-equal*0.2).toFixed(8);
+  document.autoSumForm.secondBox.value = (equal-equal*0.05).toFixed(8);
 }
 
 setInterval(function(){

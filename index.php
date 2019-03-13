@@ -59,7 +59,7 @@ $paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
 
 						<select class="form-control" name="base">
 
-                        <option value="USD" selected="USD">US Dollar</option>
+                        <option value="BRL" selected="BRL">Real Brasileiro</option>
 
                 		</select>
 
@@ -158,4 +158,3 @@ $paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
 </body>
 
 </html>
-
