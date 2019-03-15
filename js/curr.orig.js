@@ -9,7 +9,7 @@ function calc(){
 }
 
 setInterval(function(){
-  $("#secondBox").load( "getprices.php?symbol=" + x);
+  $("#secondBox").load("getprices.php?symbol=" + x);
   pricef = $('#secondBox').val();
 }, 5000);
 

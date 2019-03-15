@@ -43,11 +43,19 @@ $users = listaUser($conexao);
         <div class="jumbotron margin4">
                 <form class="margin-form contact100-form validate-form" action="resetpassword.php" method="post" id="form">
                     <div class="form-group">
+                        <label for="staticEmail">Name</label>
+                    </div>
+                   <div class="form-group">
+                        <?php foreach($users as $user) : ?>
+                        <input type="text" readonly class="form-control" id="staticEmail" value="<?=$user['res_st_name']?>">
+                        <?php endforeach ?>  
+                    </div>
+                    <div class="form-group">
                         <label for="staticEmail">Username</label>
                     </div>
                    <div class="form-group">
                         <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['res_st_username']?>">
+                        <input type="text" readonly class="form-control" id="staticEmail" value="<?=$user['res_st_username']?>">
                         <?php endforeach ?>  
                     </div>
                     <div class="form-group">
@@ -55,7 +63,7 @@ $users = listaUser($conexao);
                     </div>
                     <div class="form-group">
                         <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['res_st_email']?>">
+                        <input type="text" readonly class="form-control" id="staticEmail" value="<?=$user['res_st_email']?>">
                         <?php endforeach ?>  
                     </div>
                     <div class="form-group">
@@ -75,39 +83,7 @@ $users = listaUser($conexao);
                     </div>
                     <div class="form-group">
                         <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['res_st_userid']?>">
-                        <?php endforeach ?>  
-                    </div>
-                    <div class="form-group">
-                        <label for="staticEmail">Bitcoin Wallet</label>
-                    </div>
-                    <div class="form-group">
-                        <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['wallet_st_addr']?>">
-                        <?php endforeach ?>  
-                    </div>
-                    <div class="form-group">
-                        <label for="staticEmail">Ethereum Wallet</label>
-                    </div>
-                    <div class="form-group">
-                        <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['wallet_st_addr2']?>">
-                        <?php endforeach ?>  
-                    </div>
-                    <div class="form-group">
-                        <label for="staticEmail">Litecoin Wallet</label>
-                    </div>
-                    <div class="form-group">
-                        <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['wallet_st_addr3']?>">
-                        <?php endforeach ?>  
-                    </div>
-                    <div class="form-group">
-                        <label for="staticEmail">Cardano Wallet</label>
-                    </div>
-                    <div class="form-group">
-                        <?php foreach($users as $user) : ?>
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?=$user['wallet_st_addr4']?>">
+                        <input type="text" readonly class="form-control" id="staticEmail" value="<?=$user['res_st_userid']?>">
                         <?php endforeach ?>  
                     </div>
             </form>

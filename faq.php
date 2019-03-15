@@ -30,6 +30,8 @@ include 'css.php';
 
     opacity: 0.90;
 
+    padding-bottom: 10px;
+
     }
 
 </style>
@@ -60,11 +62,12 @@ include 'css.php';
 
                 <ul>
 
-                <li><a href="http://fraex.com/v4/signup.php" target="_blank">Register an account</a></li>
+                <li><a href="signup.php" target="_blank">Register an account</a></li>
 
-                <li>Create an order</li>
+                <li><a href="index.php" target="_blank">Create an order</a></li>
 
-                <li>Checkout your order</li>
+                <li><a href="http://fraex.com/v4/signup.php" target="_blank">Checkout your order:</a></li>
+                <li>You have to create an account before placing a buy and then be logged in to placing your order</li>
 
                 </ul></p>
 
@@ -78,9 +81,9 @@ include 'css.php';
 
                 <ul>
 
-                <li>US Dollar</li>
+                <li>Brazilian Real</li>
 
-                <li>Actually we're thinking to accept more currencies than dollar, because we're on a beta phase</li>
+                <li>Actually we're thinking to accept more currencies than brazilian, actually we're on a beta phase</li>
 
                 </ul></p>
 

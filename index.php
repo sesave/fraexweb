@@ -5,21 +5,13 @@ if (!isset($_SESSION)){
 session_start();
 
 }
-
 date_default_timezone_set('America/Sao_Paulo');
-
 include 'banco-moedas.php';
-
 include 'conexao.php';
-
 $coins = listaCoins($conexao);
-
 include 'css.php';
-
 include 'scripts.php';
-//Set useful variables for paypal form
-$paypal_link = 'https://www.sandbox.paypal.com/cgi-bin/webscr'; //Test PayPal API URL
-$paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
+
 
 ?> 
 
@@ -53,7 +45,7 @@ $paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
 
                 		<p class="s2-txt3 p-t-18">
 
-		        			Select a currency (available soon):
+		        			Currency is already selected:
 
 				        </p>
 
@@ -89,7 +81,7 @@ $paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
 
                     	<?php foreach($coins as $coin) : ?>
 
-                        <option value="<?=$coin['coin_st_apisymbol']?>"><?=$coin['coin_st_name']?></option>
+                        <option id='select' value="<?=$coin['coin_st_apisymbol']?>"><?=$coin['coin_st_name']?></option>
 
                     	<?php endforeach ?>
 
@@ -98,62 +90,67 @@ $paypal_username = 'fraexcontact-facilitator@gmail.com'; //Business Email
         </div>        		        		
 		</div>
 		<div class="row"> <!-- linha do botão -->
-            <!-- <form action="order.php" method="post"> -->
 				<div class="col-md-4 margin5">
-				<form action="order.php" method="post">
-        		<input type='hidden' name='cancel_return' value='http://fraex.com/v4/?success=false'> <!-- URL de cancelamento -->
-				<input type='hidden' name='return' value='http://fraex.com/v4/?success=true'> <!-- URL de sucesso -->
-        		<input type="hidden" name="" value="submit"> <!-- value do botão quando clica -->
-        		<button id="myBtn" onclick="validatebtn()" name="submit" class="btn btn-outline-success btn-lg btn-block">Place your order</button>
-                <!--onclick="validatebtn()"-->
-                </form>
-        	</div>
+					<button id='btn1' class="btn btn-outline-success btn-lg btn-block">Place your order</button>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Fraex Checkout</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" class="x">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+					<div class="form-group row">
+						<label for="realInput" class="col-sm-2 col-form-label">R$: </label>
+						<div class="col-sm-10">
+						<input class="form-control" type="text" id="realInput" readonly>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="cryInput" class="col-sm-2 col-form-label">Crypto Selected: </label>
+						<div class="col-sm-10">
+						<input class="form-control" type="text" id="cryInput" readonly>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="walletInput" class="col-sm-2 col-form-label">Your wallet: </label>
+						<div class="col-sm-10">
+						<input type="text" class="form-control" id="walletInput" placeholder="Cryptocurrency Wallet" autofocus required>
+						</div>
+					</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-outline-primary">Confirm your checkout</button>
+					</div>
+					</div>
+				</div>
+				</div>
         	<!--</form>-->
         </div>
-
-
-		<div class="flex-w">
-
-			<a href="#" class="flex-c-m size5 bg3 how1 trans-04 m-r-5">
-
-				<i class="fab fa-facebook-f"></i>
-
-			</a>
-
-
-
-			<a href="#" class="flex-c-m size5 bg4 how1 trans-04 m-r-5">
-
-				<i class="fab fa-twitter"></i>
-
-			</a>
-
-
-
-			<a href="#" class="flex-c-m size5 bg5 how1 trans-04 m-r-5">
-
-				<i class="fab fa-youtube"></i>
-
-			</a>
-
 		</div>
-
-
-	<script src="js/jquery.min.js"></script>
-
+		<div class="flex-w">
+			<a href="#" class="flex-c-m size5 bg3 how1 trans-04 m-r-5">
+				<i class="fab fa-facebook-f"></i>
+			</a>
+			<a href="#" class="flex-c-m size5 bg4 how1 trans-04 m-r-5">
+				<i class="fab fa-twitter"></i>
+			</a>
+			<a href="#" class="flex-c-m size5 bg5 how1 trans-04 m-r-5">
+				<i class="fab fa-youtube"></i>
+			</a>
+		</div>
 	<script src="js/jquery.maskMoney.min.js"></script>
-
-	<script src="vendor/bootstrap/js/popper.js"></script>
-
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-	<?php require_once( "getprices.php" ); require_once( "getbase.php" ); ?>
-
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<?php require_once( "getprices.php" ); require_once( "getbase.php" ); require_once( "modal.php" );?>
 	<script src="js/curr.orig.js"></script>
-
 	<script src="js/main.js"></script>
-
-	</div>  
+	</div> 
 
 </body>
 
