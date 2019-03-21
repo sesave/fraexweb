@@ -4,8 +4,10 @@
             <?php if(isset($_SESSION['email'])){?>
                 let currency = document.getElementById("firstBox").value;
                 let crypto = document.getElementById("secondBox").value;
+                let symbol = '<?php echo $_SESSION['symbol']?>';
                 document.getElementById("cryInput").value = crypto;
                 document.getElementById("realInput").value = currency;
+                document.getElementById("cryptolabel").innerHTML = symbol + ":";
                 if(crypto == "" && currency == ""){
                      alert('Empty fields, please fill the currency input');
                     let delayInMilliseconds = 0500;
