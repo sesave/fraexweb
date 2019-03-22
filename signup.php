@@ -56,8 +56,14 @@ include 'scripts.php';
                         <div class="invalid-feedback">
                         You must agree before submitting.
                         </div>
-                        
                     </div>
+                        <!-- script qrcode -->
+                        <script src="js/jquery.min.js"></script>
+                        <script src="js/jquery.qrcode.min.js"></script>
+                        <p class="m1-txt1 p-b-36 lol"><span class="m1-txt2">FRAEX</span> :: Register App</p>
+                        <div id="qrcodeTable"></div>
+                        <?php include 'js/suqrcode.php'; ?>
+                        <br><br>
                     <button class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-07" type="submit" form="form1" value="Submit">
 							Register
 					</button>
