@@ -5,8 +5,7 @@ include('css.php');
 if(isset($_SESSION['email'])){
 	$login = $_SESSION['email'];
 	include('conexao.php');
-	$resultf=mysqli_fetch_array(mysqli_query($conexao,"select res_st_devkey from user_tb_register where res_st_email='$login' limit 1"));
-	$devkey=$resultf['res_st_devkey'];
+	$user=mysqli_fetch_array(mysqli_query($conexao,"select res_st_devkey from user_tb_register where res_st_email='$login' limit 1"));
 }
 else{
 	$devkey = "Necessário estar logado!";

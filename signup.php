@@ -2,7 +2,6 @@
 error_reporting(E_ALL ^ E_NOTICE);
 include 'css.php';
 //include 'scripts.php';
-$devkey = password_hash(substr(str_shuffle('1234567890aAbBcCdDeEfF#$!'), 0, 16),PASSWORD_BCRYPT,['cost' => 7,]);
 ?>
 <body>
     <div class="container logoMargin">
@@ -58,22 +57,12 @@ $devkey = password_hash(substr(str_shuffle('1234567890aAbBcCdDeEfF#$!'), 0, 16),
                         You must agree before submitting.
                         </div>
                     </div>
-                        <!-- script qrcode -->
-                        <script src="js/jquery.min.js"></script>
-                        <script src="js/jquery.qrcode.min.js"></script>
-                        <p class="m1-txt1 p-b-36 lol"><span class="m1-txt2">FRAEX</span> :: Register App</p>
-                        <div id="qrcodeTable"></div>
-                        <?php include 'js/suqrcode.php'; ?>
-                        <br>
-                    <div class="form-group">
-					    <input class="form-control" type="text" name="devkey" value="<?php echo $devkey; ?>" readonly>
-					    <span class="focus-input100"></span>
-                    </div>
                         <br>
                     <button class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-07" type="submit" form="form1" value="Submit">
 							Register
 					</button>
+					<br><br>
 				</form>
 		</div>
 	</body>
-</html>
+</html>r

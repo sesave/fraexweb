@@ -84,8 +84,16 @@ $users = listaUser($conexao);
                     <div class="form-group">
                         <?php foreach($users as $user) : ?>
                         <input type="text" readonly class="form-control" id="staticEmail" value="<?=$user['res_st_userid']?>">
-                        <?php endforeach ?>  
+                        <?php endforeach ?>
                     </div>
+                    
+                        <!-- script qrcode -->
+                        <script src="js/jquery.min.js"></script>
+                        <script src="js/jquery.qrcode.min.js"></script>
+                        <p class="m1-txt1 p-b-36 lol"><span class="m1-txt2">FRAEX</span> :: App Checker<li>Código para registro do aplicativo</li></p>
+                        <div id="qrcodeTable"></div>
+                        <?php include 'js/suqrcode.php'; ?>
+                        <br>
             </form>
                     <!--<button id="myBtn" class="btn btn-outline-primary">
                             Insert New Wallets
@@ -141,8 +149,6 @@ $users = listaUser($conexao);
         </div><!-- /.row -->								
 
 		</div><!-- /.container -->
-
-		<?php include 'scripts.php'?>
 
 </body>
 
