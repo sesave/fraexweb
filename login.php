@@ -9,7 +9,7 @@ if(!isset($_SESSION['email']) || !isset($_SESSION['nome']) || !password_verify(s
 session_destroy();
 }*/
 include 'css.php';
-include 'scripts.php';
+//include 'scripts.php';
 
 function usuarioLogado() {
 	return $_SESSION["email"];
