@@ -22,13 +22,13 @@ if('$symbol' == '$btc'){
     $symbol=4;
 } 
 
-$query = "INSERT INTO user_tb_order(res_in_id,coin_in_id,wallet_st_addr,order_re_vlr,order_re_price,order_dt_date,order_st_status) values ('$id','$symbol','$wallet','$crypto1','$reais',NOW(),'Sem confirmação')";
+$query = "INSERT INTO user_tb_order(res_in_id,coin_in_id,wallet_st_addr,order_re_vlr,order_re_price,order_dt_date,order_st_status) values ('$id','$symbol','$wallet','$crypto1','$reais',NOW(),'nao_verificado')";
 $resultado= mysqli_query($conexao,$query);
-if(mysqli_insert_id($conexao)){?>
-    <script>alert("Compra feita com sucesso! Espere a nossa confirmação");location.href = "index.php";</script>
-	<?php }else{
-    echo "Your query failed: " . mysqli_error($conexao);?>
-	<script>alert("Error! Nenhum será inserido. Tente de novo");location.href = "index.php";</script>
-    <?php
+if(mysqli_insert_id($conexao)){
+    //echo '<script>alert("Compra feita com sucesso! Espere a nossa confirmação"); location.href = "index.php";</script>';
+    header("Location: checkout_auth.php");
+	}else{
+    echo "Your query failed: " . mysqli_error($conexao);
+	echo '<script>alert("Error! Nenhum será inserido. Tente de novo"); window.history.back();</script>';
 }
 ?>

@@ -3,12 +3,14 @@ session_start();
 require_once 'lib/otphp.php';
 //date_default_timezone_set('America/Sao_Paulo');
 include('css.php');
-if(isset($_SESSION['email'])){
-	$login = $_SESSION['email'];
+if(isset($_SESSION['id'])){
+	$id = $_SESSION['id'];
 	include('conexao.php');
-	$resultf=mysqli_fetch_array(mysqli_query($conexao,"select res_st_devkey from user_tb_register where res_st_email='$login' limit 1"));
-	$devkey=$resultf['res_st_devkey'];
-}
+	//$sresult=mysqli_fetch_array(mysqli_query($conexao,"select order_st_status from user_tb_order where res_in_id='$id' limit 1"));
+	//$status = $sresult['order_st_status'];
+	$dresult=mysqli_fetch_array(mysqli_query($conexao,"select res_st_devkey from user_tb_register where res_in_id='$id' limit 1"));
+	$devkey = $dresult['res_st_devkey'];
+	}
 else{
 	$devkey = "Necessário estar logado!";
 	echo "<script>alert('$devkey');</script>";
@@ -17,7 +19,8 @@ else{
 $totp = new \OTPHP\TOTP(sha1($devkey . $_SESSION['qcverify']));
 //echo $totp->now();
 if ($totp->verify($_POST['verify'])){
-	echo '<script>window.alert("Código verificado com sucesso!");</script>';
+	
+	echo '<script>window.alert("Compra feita com sucesso! Espere a nossa confirmação!"); location.href = "index.php";</script>';
 }
 else{
 	//echo '<script>window.location.replace("modal.php");</script>';
