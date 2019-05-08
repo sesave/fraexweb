@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 11-Fev-2019 às 17:36
--- Versão do servidor: 10.3.12-MariaDB
--- PHP Version: 7.0.26
+-- Generation Time: 08-Maio-2019 às 21:03
+-- Versão do servidor: 10.3.14-MariaDB
+-- versão do PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,10 +69,10 @@ CREATE TABLE `glo_tb_coin` (
 --
 
 INSERT INTO `glo_tb_coin` (`coin_in_id`, `coin_st_name`, `coin_st_symbol`, `coin_re_fee`, `coin_st_mask`, `coin_st_apisymbol`, `coin_re_lastprice`) VALUES
-(1, 'Bitcoin', 'BTC', 0.20, '0,00000000', 'BTCUSDT', 0),
-(2, 'Ethereum', 'ETH', 0.20, '0,000000000000000000', 'ETHUSDT', 0),
-(3, 'Litecoin', 'LTC', 0.20, '0,00', 'LTCUSDT', 0),
-(4, 'Cardano', 'ADA', 0.20, '0,000', 'ADAUSDT', 0);
+(1, 'Bitcoin', 'BTC', '0.20', '0,00000000', 'BTCUSDT', 0),
+(2, 'Ethereum', 'ETH', '0.20', '0,000000000000000000', 'ETHUSDT', 0),
+(3, 'Litecoin', 'LTC', '0.20', '0,00', 'LTCUSDT', 0),
+(4, 'Cardano', 'ADA', '0.20', '0,000', 'ADAUSDT', 0);
 
 -- --------------------------------------------------------
 
@@ -172,7 +172,7 @@ CREATE TABLE `user_tb_order` (
   `order_in_id` int(11) NOT NULL,
   `res_in_id` int(11) DEFAULT NULL,
   `coin_in_id` int(11) DEFAULT NULL,
-  `wallet_in_id` int(11) DEFAULT NULL,
+  `wallet_st_addr` varchar(120) COLLATE utf8_unicode_ci DEFAULT NULL,
   `order_re_vlr` decimal(18,2) NOT NULL,
   `order_re_price` decimal(18,2) NOT NULL,
   `order_dt_date` date NOT NULL,
@@ -183,14 +183,14 @@ CREATE TABLE `user_tb_order` (
 -- Extraindo dados da tabela `user_tb_order`
 --
 
-INSERT INTO `user_tb_order` (`order_in_id`, `res_in_id`, `coin_in_id`, `wallet_in_id`, `order_re_vlr`, `order_re_price`, `order_dt_date`, `order_in_status`) VALUES
-(3, 2, 1, 5, 550.00, 555.00, '2018-11-12', 1),
-(4, 1, 1, 2, 28.00, 555.00, '2018-11-12', 1),
-(5, 1, 1, 2, 20.00, 555.00, '2018-11-12', 1),
-(6, 2, 2, 1, 500.00, 900.00, '2018-11-28', 1),
-(7, 2, 3, 3, 100.00, 950.00, '2018-11-28', 1),
-(8, 2, 4, 4, 600.00, 980.00, '2018-11-30', 1),
-(9, 1, 1, 2, 2220.00, 555.00, '2018-11-30', 1);
+INSERT INTO `user_tb_order` (`order_in_id`, `res_in_id`, `coin_in_id`, `wallet_st_addr`, `order_re_vlr`, `order_re_price`, `order_dt_date`, `order_in_status`) VALUES
+(3, 2, 1, '5', '550.00', '555.00', '2018-11-12', 1),
+(4, 1, 1, '2', '28.00', '555.00', '2018-11-12', 1),
+(5, 1, 1, '2', '20.00', '555.00', '2018-11-12', 1),
+(6, 2, 2, '1', '500.00', '900.00', '2018-11-28', 1),
+(7, 2, 3, '3', '100.00', '950.00', '2018-11-28', 1),
+(8, 2, 4, '4', '600.00', '980.00', '2018-11-30', 1),
+(9, 1, 1, '2', '2220.00', '555.00', '2018-11-30', 1);
 
 -- --------------------------------------------------------
 
@@ -206,6 +206,7 @@ CREATE TABLE `user_tb_register` (
   `res_st_email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `res_st_userid` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `res_dt_date` date NOT NULL,
+  `res_st_devkey` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
   `res_in_usertype` int(1) NOT NULL DEFAULT 0,
   `res_in_able` int(11) DEFAULT NULL,
   `wallet_st_addr` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -218,12 +219,17 @@ CREATE TABLE `user_tb_register` (
 -- Extraindo dados da tabela `user_tb_register`
 --
 
-INSERT INTO `user_tb_register` (`res_in_id`, `res_st_username`, `res_st_passwrd`, `res_st_name`, `res_st_email`, `res_st_userid`, `res_dt_date`, `res_in_usertype`, `res_in_able`, `wallet_st_addr`, `wallet_st_addr2`, `wallet_st_addr3`, `wallet_st_addr4`) VALUES
-(1, 'admfrade', '$2y$10$iJjQpJdbulBYS9kz2Rspx.i.DzDBit6rVTIZZJHvh2JHMcy8HyaNu', 'Alexandre', 'admfrade@gmail.com', '36147152807', '2018-09-25', 1, 1, 'f759c9cf6fb80a0549b1b2179d09f432', NULL, NULL, NULL),
-(2, 'sebaskun98', '$2y$10$OIw9/62hpC38RleQPUo0sO9bppn0fR3fJPsrZK5RnjcbbGX9V4ke.', 'Sebastian', 'sebastiansanchezvega@gmail.com', '2134234234', '2018-09-25', 1, 1, 'd10a0e12cc5edb42beff8744f53db304', 'b457efc051ce4f0ebf0861e9f5857053', '3bea1f69904020c35ae85aff192a29b6', 'fd9d0abf819c1defc41a097019959568'),
-(3, 'brendo', '$2y$10$DlToV8kdZm7ZCWfsrsTrHudOt7np8W0YDfN3Z/O7XNSTkbjLfZuFW', 'Brendo', 'brendo_poke@hotmail.com', '1234', '2018-09-29', 1, 1, NULL, NULL, NULL, NULL),
-(4, 'user123', '$2y$10$Vea81kxSRcQcsyVaI5BuMen63FfyDFJGGX8RodifmZRObIBskyakG', 'User1', '123@mail.com', '123456', '2018-11-12', 0, 1, NULL, NULL, NULL, NULL),
-(5, 'ads123', '$2y$10$CxQRUZDLTtK24IxaKciT4.VRLo88KVk2lMJDK4pxiNYET8GCNz2aS', 'ADS', 'ads@faat.com', '11111111111', '2018-11-30', 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user_tb_register` (`res_in_id`, `res_st_username`, `res_st_passwrd`, `res_st_name`, `res_st_email`, `res_st_userid`, `res_dt_date`, `res_st_devkey`, `res_in_usertype`, `res_in_able`, `wallet_st_addr`, `wallet_st_addr2`, `wallet_st_addr3`, `wallet_st_addr4`) VALUES
+(1, 'admfrade', '$2y$10$/KavZw3U/BuEgf.iyIhybOX4oLVTS91b0ETO5bAEtFXuVIl0H8tXy', 'Alexandre', 'admfrade@gmail.com', '36147152807', '2018-09-25', '$2y$07$NVjigwCDZQvy7bVh55BZ5u0tIfWiQ272wk2TqhpVAPp9eGnxCnuNS', 1, 1, 'f759c9cf6fb80a0549b1b2179d09f432', NULL, NULL, NULL),
+(2, 'sebaskun98', '$2y$10$OIw9/62hpC38RleQPUo0sO9bppn0fR3fJPsrZK5RnjcbbGX9V4ke.', 'Sebastian', 'sebastiansanchezvega@gmail.com', '2134234234', '2018-09-25', '0', 1, 1, 'd10a0e12cc5edb42beff8744f53db304', 'b457efc051ce4f0ebf0861e9f5857053', '3bea1f69904020c35ae85aff192a29b6', 'fd9d0abf819c1defc41a097019959568'),
+(3, 'brendo', '$2y$10$DlToV8kdZm7ZCWfsrsTrHudOt7np8W0YDfN3Z/O7XNSTkbjLfZuFW', 'Brendo', 'brendo_poke@hotmail.com', '1234', '2018-09-29', '0', 1, 1, NULL, NULL, NULL, NULL),
+(4, 'user123', '$2y$10$Vea81kxSRcQcsyVaI5BuMen63FfyDFJGGX8RodifmZRObIBskyakG', 'User1', '123@mail.com', '123456', '2018-11-12', '0', 0, 1, NULL, NULL, NULL, NULL),
+(5, 'ads123', '$2y$10$CxQRUZDLTtK24IxaKciT4.VRLo88KVk2lMJDK4pxiNYET8GCNz2aS', 'ADS', 'ads@faat.com', '11111111111', '2018-11-30', '0', 0, NULL, NULL, NULL, NULL, NULL),
+(16, '1234', '$2y$10$yqJEldV.erLe462CfN6IZ.KRWlY7msrl.XS3EA7zeIRFG0wdnSXIe', 'testezzzzzzzzz', 'admin111@example.com', '123', '2019-05-08', NULL, 0, NULL, NULL, NULL, NULL, NULL),
+(18, '2', '$2y$10$caG4yLC9cAjspYfi0CaJxemfussLD5C/Beaw4vt0gQfURWNsJiPWy', 'teste', 'sebastian123@saaeatibaia.com.br', '2', '2019-05-08', NULL, 0, NULL, NULL, NULL, NULL, NULL),
+(19, '', '$2y$10$Ir8Il7CISkU0nVZ/JzBYZOdaQWOt7zuhp0G5Ku16iEL9JRAZAhXKW', '', '', '', '2019-05-08', NULL, 0, NULL, NULL, NULL, NULL, NULL),
+(20, 'sdfsdf', '$2y$10$hAXungECGqRbt5Rr/uerdub5/n7awvupJXEMdmycBAQiMq9utBtOK', 'seu pai', 'seasdad@mail.om', '123', '2019-05-08', NULL, 0, NULL, NULL, NULL, NULL, NULL),
+(24, 'fulano', '$2y$10$7cs1ATZX4UJGWE/uQ2wSsemz1PA6p0PHxMqwUKTXfPbRtq5KpHqou', 'Fulano Ciclano', 'fulano@fulanomails.com', '123456789-0', '2019-05-08', '$2y$07$O9nYUd3zLd003Axt.3ibzOwccxe7RWjgGPAEDCWUGLtiDn4/DLr5C', 0, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -373,7 +379,7 @@ ALTER TABLE `user_tb_order`
 -- AUTO_INCREMENT for table `user_tb_register`
 --
 ALTER TABLE `user_tb_register`
-  MODIFY `res_in_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `res_in_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user_tb_wallets`
