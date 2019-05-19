@@ -9,6 +9,7 @@ if(password_verify($senha, $resultf['res_st_passwrd'])){
     $token=password_hash(session_id(), PASSWORD_DEFAULT);
     $_SESSION['email']=$resultf['res_st_email'];
     $_SESSION['id']=$resultf['res_in_id'];
+    $_SESSION['name']=$resultf['res_st_name'];
     header("Location: index.php?token=$token");
 }else{
 ?>

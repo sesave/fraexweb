@@ -20,7 +20,8 @@ $totp = new \OTPHP\TOTP(sha1($devkey . $_SESSION['qcverify']));
 //echo $totp->now();
 if ($totp->verify($_POST['verify'])){
 	
-	echo '<script>window.alert("Compra feita com sucesso! Espere a nossa confirmação!"); location.href = "index.php";</script>';
+	header("Location: checkout_pass.php");
+	echo '<script>window.location.replace("checkout_pass.php");</script>';
 }
 else{
 	//echo '<script>window.location.replace("modal.php");</script>';
