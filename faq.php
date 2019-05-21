@@ -50,11 +50,11 @@ include 'css.php';
 
                 <br/>
 
-                <h1>FAQ</h1>
+                <h1>Dúvidas Frequentes</h1>
 
                 <hr>
 
-                <h4>How do you trade/buy?</h4>
+                <h4>Como você compra?</h4>
 
                 <br/>
 
@@ -62,18 +62,18 @@ include 'css.php';
 
                 <ul>
 
-                <li><a href="signup.php" target="_blank">Register an account</a></li>
+                <li> <a href="signup.php" target="_blank"> Registre uma conta </a> </li>
 
-                <li><a href="index.php" target="_blank">Create an order</a></li>
+                <li> <a href="index.php" target="_blank"> Crie um pedido </a> </li>
 
-                <li><a href="http://fraex.com/v4/signup.php" target="_blank">Checkout your order:</a></li>
-                <li>You have to create an account before placing a buy and then be logged in to placing your order</li>
+                <li> <a href="http://fraex.com/v4/signup.php" target="_blank"> Faça seu pedido: </a> </li>
+                <li> Você precisa criar uma conta antes de fazer uma compra e depois fazer login para fazer seu pedido </li>
 
-                </ul></p>
+                </ul> </p>
 
                 <br/>
 
-                <h4>What currency do we accept?</h4>
+                <h4>Qual moeda nós aceitamos?</h4>
 
                 <br/>
 
@@ -81,15 +81,15 @@ include 'css.php';
 
                 <ul>
 
-                <li>Brazilian Real</li>
+                <li>Real Brasileiro</li>
 
-                <li>Actually we're thinking to accept more currencies than brazilian, actually we're on a beta phase</li>
+                <li>Na verdade, estamos pensando em aceitar mais moedas do que o real brasileiro, na verdade estamos em uma fase beta</li>
 
                 </ul></p>
 
                 <br/>
 
-                <h4>What coins you can trade/buy?</h4>
+                <h4>Quais moedas você pode comprar?</h4>
 
                 <br/>
 
@@ -109,7 +109,7 @@ include 'css.php';
 
                 <br/>
 
-                <h4>What documents do I need to make an order?</h4>
+                <h4>Quais documentos eu preciso para fazer um pedido?</h4>
 
                 <br/>
 
@@ -117,25 +117,25 @@ include 'css.php';
 
                 <ul>
 
-                <li>CPF for brazilian citizens</li>
+                <li>CPF para cidadãos brasileiros</li>
 
-                <li>A valid passport for foreigners</li>
+                <li>Um passaporte válido para estrangeiros</li>
 
                 </ul></p>
 
                 <br/>
 
-                <h4>What is 2Factor Authentication (or 2FA)?</h4>
+                <h4>O que é autenticação de 2 fatores (ou 2FA)?</h4>
 
                 <br/>
 
                 <p>
 
-                    We enable you to empower 2FA for you by introducing an authenticator application, (for example, <a href="https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=en" target="_blank">Google Authenticator</a>) on your smartphone. 
+                Permitimos que você potencialize o 2FA para você ao apresentar um aplicativo autenticador (por exemplo, <a href = "https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=pt_BR" target = "_ blank"> Google Authenticator </a>) no seu smartphone.
 
-                    The authenticator application will produce another 6 digit code like clockwork, each time you login you should enter this code. 
+                O aplicativo autenticador produzirá outro código de 6 dígitos, como um relógio, sempre que você fizer o login, deverá digitar esse código.
 
-                    This enormously builds the security of your record provided that your email is hacked into, or your secret key is imperiled, the programmer will in any case not have the capacity to get into your record since they require the code from your telephone as well. 
+                Isso constrói enormemente a segurança do seu registro, desde que seu e-mail seja invadido, ou sua chave secreta esteja em perigo; o programador, em qualquer caso, não terá a capacidade de entrar em seu registro, pois também exige o código do seu telefone.
 
                 </p>
 
@@ -146,8 +146,6 @@ include 'css.php';
                 </div>								
 
 		</div><!-- /.container -->
-
-<?php include 'scripts.php'?>
 
 </body>
 
