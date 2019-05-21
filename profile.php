@@ -43,7 +43,7 @@ $users = listaUser($conexao);
         <div class="jumbotron margin4">
                 <form class="margin-form contact100-form validate-form" action="resetpassword.php" method="post" id="form">
                     <div class="form-group">
-                        <label for="staticEmail">Name</label>
+                        <label for="staticEmail">Nome</label>
                     </div>
                    <div class="form-group">
                         <?php foreach($users as $user) : ?>
@@ -59,7 +59,7 @@ $users = listaUser($conexao);
                         <?php endforeach ?>  
                     </div>
                     <div class="form-group">
-                        <label for="staticEmail">Email</label>
+                        <label for="staticEmail">E-mail</label>
                     </div>
                     <div class="form-group">
                         <?php foreach($users as $user) : ?>
@@ -67,7 +67,7 @@ $users = listaUser($conexao);
                         <?php endforeach ?>  
                     </div>
                     <div class="form-group">
-                        <label for="staticEmail">New Password</label>
+                        <label for="staticEmail">Nova Senha</label>
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="password" name="newpassword" placeholder="Password" required>
@@ -75,11 +75,11 @@ $users = listaUser($conexao);
                     </div>
                     <div class="form-group">
                     <button class="btn btn-outline-danger" type="submit" value="Submit">
-                            Reset Password
+                            Resete sua senha
                     </button>
                     </div>
                     <div class="form-group">
-                        <label for="staticEmail">CPF/Passport</label>
+                        <label for="staticEmail">CPF/Passaporte</label>
                     </div>
                     <div class="form-group">
                         <?php foreach($users as $user) : ?>

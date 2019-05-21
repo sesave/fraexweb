@@ -24,20 +24,20 @@ function usuarioEstaLogado() {
                 <div class="row">
                     <div class="col-md-8 col-sm-4">
 				    <p class="m1-txt1 p-b-36 lol">
-					    <span class="m1-txt2">Login</span> :: Get your data
+					    <span class="m1-txt2">Login</span> :: Obtenha seus dados
 				    </p>
 				    </div>
                 </div>
 				<form class="contact100-form validate-form" action="logica-login.php" method="post" id="form1">
                     <div class="form-group">
-                        <input class="form-control" type="email" name="email" placeholder="Email Address" required>
+                        <input class="form-control" type="email" name="email" placeholder="E-mail" required>
 					    <span class="focus-input100"></span>   
                     </div>
 					<div class="form-group">
-					    <input class="form-control" type="password" name="password" placeholder="Password" required>
+					    <input class="form-control" type="password" name="password" placeholder="Senha" required>
 					    <span class="focus-input100"></span>
                     </div>
-                    <p class="forgot" style="margin-bottom: 2%"><a href="#">Forgot Password?</a></p>
+                    <p class="forgot" style="margin-bottom: 2%"><a href="#">Esqueceu sua senha?</a></p>
                     <button class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-07" type="submit" form="form1" value="Submit">
 							Login
 					</button>

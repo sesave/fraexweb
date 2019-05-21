@@ -96,7 +96,7 @@ window.onload=function() {
 				</form>
 				</div>
 				<br><br>
-                <li><a href="" target="_blank">Download the latest<br>App Fraex Checker</a></li>
+                <li><a href="" target="_blank">Baixe a última versão de<br>App Fraex Checker</a></li>
 
                 </div>
 

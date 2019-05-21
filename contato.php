@@ -24,7 +24,7 @@ include 'scripts.php';
 
                     <div class="form-group">
 
-                        <label for="first_name">First Name *</label>
+                        <label for="first_name">Nome *</label>
 
                         <input class="form-control"  type="text" name="first_name" maxlength="50" size="30" required>
 
@@ -32,7 +32,7 @@ include 'scripts.php';
 
                     <div class="form-group">
 
-                        <label for="last_name">Last Name *</label>
+                        <label for="last_name">Sobrenome *</label>
 
                         <input class="form-control"  type="text" name="last_name" maxlength="50" size="30" required>
 
@@ -40,7 +40,7 @@ include 'scripts.php';
 
                     <div class="form-group">
 
-                        <label for="email">Email Address *</label>
+                        <label for="email">E-mail *</label>
 
                         <input class="form-control"  type="text" name="email" maxlength="80" size="30" required>
 
@@ -48,7 +48,7 @@ include 'scripts.php';
 
                     <div class="form-group">
 
-                        <label for="telephone">Telephone Number</label>
+                        <label for="telephone">Número de Telefone/Celular</label>
 
                         <input class="form-control"  type="text" name="telephone" maxlength="30" size="30">
 
@@ -56,7 +56,7 @@ include 'scripts.php';
 
                     <div class="form-group">
 
-                        <label for="comments">Comments *</label>
+                        <label for="comments">Comentários *</label>
 
                         <textarea class="form-control" rows="5" name="comments" required></textarea>
 
@@ -66,7 +66,7 @@ include 'scripts.php';
 
                        <button class="btn btn-primary" type="submit" id="contactform" value="Submit">
 
-							Submit
+							Envie seu contato
 
 					</button>
 

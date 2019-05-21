@@ -42,7 +42,7 @@ include 'css.php';
 
                 		<p class="s2-txt3 p-t-18">
 
-		        			Currency is already selected:
+							Moeda já está selecionada:
 
 				        </p>
 
@@ -68,11 +68,11 @@ include 'css.php';
 
 						<p class="s2-txt3 p-t-18">
  
-		        			Select a cryptocoin:  
+		        			Seleccione uma cryptomoeda 
  
 				        </p>
 							<select class="form-control" name="symbol" onchange="this.form.submit();">
-							<option disabled selected="selected">Select</option>
+							<option disabled selected="selected">Seleccione</option>
 							<?php foreach($coins as $coin) : ?>
 							<option id='select' value="<?=$coin['coin_st_apisymbol']?>"><?=$coin['coin_st_name']?></option>
 							<?php endforeach ?>
@@ -83,7 +83,7 @@ include 'css.php';
 		</div>
 		<div class="row"> <!-- linha do botão -->
 				<div class="col-md-4 margin5">
-					<button id='btn1' class="btn btn-outline-success btn-lg btn-block">Place your order</button>
+					<button id='btn1' class="btn btn-outline-success btn-lg btn-block">Faça seu pedido</button>
 				<!-- Modal -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
 				<div class="modal-dialog modal-dialog-centered" role="document">
@@ -109,15 +109,15 @@ include 'css.php';
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="walletInput" class="col-sm-2 col-form-label">Your wallet: </label>
+						<label for="walletInput" class="col-sm-2 col-form-label">Seu wallet: </label>
 						<div class="col-sm-10">
-						<input type="text" class="form-control" name="walletInput" id="walletInput" placeholder="Cryptocurrency Wallet" autofocus required>
+						<input type="text" class="form-control" name="walletInput" id="walletInput" placeholder="Walletde Cryptomoeda" autofocus required>
 						</div>
 					</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-outline-primary">Confirm your checkout</button>
+						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+						<button type="submit" class="btn btn-outline-primary">Confirmar seu checkout</button>
 					</div>
 					</form>
 					</div>

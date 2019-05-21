@@ -6,7 +6,7 @@ $token = $_GET['token'];
     if(isset($token) && password_verify(session_id(), $token)){
     	session_destroy();
     ?>
-    <script>alert("Logout Success");location.href='index.php';</script> 
+    <script>alert("Logout feito com sucesso");location.href='index.php';</script> 
     <?php
 		die();
     }

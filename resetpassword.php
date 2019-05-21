@@ -9,7 +9,7 @@ $sql="update user_tb_register SET res_st_passwrd='{$passwrd}' where res_in_id='$
 $resultado= mysqli_query($conexao,$sql);
 if($resultado){
 ?>
-	<script>alert("Success password update!");location.href = "profile.php";</script>
+	<script>alert("Senha atualizada com sucesso!");location.href = "profile.php";</script>
 <?php
 }else{
 	$lol=mysqli_error($conexao);

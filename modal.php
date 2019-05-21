@@ -9,7 +9,7 @@
                 document.getElementById("realInput").value = currency;
                 document.getElementById("cryptolabel").innerHTML = symbol + ":";
                 if(crypto == "" && currency == ""){
-                     alert('Empty fields, please fill the currency input');
+                     alert('Campos vazios, por favor, preencha a entrada da moeda');
                     let delayInMilliseconds = 0500;
                     setTimeout(function() {
                         location.reload();
@@ -18,7 +18,7 @@
                     $("#myModal").modal();
                 }
             <?php }else{ ?>
-                alert("You need to be logged in to place an order");
+                alert("Você precisa estar logado para fazer um pedido");
                 setTimeout(function() {
                     location.href('login.php');
                 }, delayInMilliseconds);
