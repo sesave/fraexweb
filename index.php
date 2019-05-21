@@ -111,7 +111,7 @@ include 'css.php';
 					<div class="form-group row">
 						<label for="walletInput" class="col-sm-2 col-form-label">Seu wallet: </label>
 						<div class="col-sm-10">
-						<input type="text" class="form-control" name="walletInput" id="walletInput" placeholder="Walletde Cryptomoeda" autofocus required>
+						<input type="text" class="form-control" name="walletInput" id="walletInput" placeholder="Wallet de Cryptomoeda" autofocus required>
 						</div>
 					</div>
 					</div>
