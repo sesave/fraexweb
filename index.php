@@ -142,6 +142,7 @@ include 'css.php';
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<?php require_once( "getprices.php" ); require_once( "getbase.php" ); require_once( "modal.php" );?>
 	<script src="js/curr.orig.js"></script>
+	<script src="js/jquery.maskMoney.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/tawkto.js"></script>
 	</div> 
